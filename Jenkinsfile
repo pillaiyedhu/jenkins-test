@@ -23,6 +23,7 @@ pipeline{
                 docker stop myjenkinsapp || true
                 docker rm myjenkinsapp || true
                 docker run -d -p 8000:8000 --name myjenkinsappcon myjenkinsapp
+                '''
             }
         }
 
