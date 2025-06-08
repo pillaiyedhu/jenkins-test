@@ -14,15 +14,15 @@ pipeline{
         }
         stage('Build Docker Image'){
             steps{
-                sh 'docker build -t myjenkinsapp .'
+                sh 'sudo docker build -t myjenkinsapp .'
             }
         }
         stage('Run Docker Container'){
             steps{
                 sh '''
-                docker stop myjenkinsapp || true
-                docker rm myjenkinsapp || true
-                docker run -d -p 8000:8000 --name myjenkinsappcon myjenkinsapp
+                sudo docker stop myjenkinsapp || true
+                sudo docker rm myjenkinsapp || true
+                sudo docker run -d -p 8000:8000 --name myjenkinsappcon myjenkinsapp
                 '''
             }
         }
